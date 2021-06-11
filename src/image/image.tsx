@@ -33,8 +33,6 @@ const Image = forwardRef((props, ref) => {
   const intWidth = getInt(width);
   const intHeight = getInt(height);
 
-  console.log({ intWidth, intHeight });
-
   const shared = { ref, width, height, ...rest };
 
   // if loading (`lazy` | `eager`) is provided ignore adding placeholder

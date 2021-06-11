@@ -10,7 +10,7 @@ import {
  * Hook which loads image and let us know the status
  * so we can show placeholder/fallback
  *
- * @returns status fro image loading process
+ * @returns status for image loading process
  */
 function useImage({
   src,
@@ -61,13 +61,13 @@ function useImage({
       img.sizes = sizes;
     }
 
-    img.onload = event => {
+    img.onLoad = event => {
       flush();
       setStatus('loaded');
       onLoad?.(event);
     };
 
-    img.onerror = error => {
+    img.onError = error => {
       flush();
       setStatus('failed');
       onError?.(error);
