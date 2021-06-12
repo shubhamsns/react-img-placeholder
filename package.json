@@ -39,6 +39,11 @@
     "placeholder",
     "loading"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shubham-sns/react-img-placeholder.git"
+  },
+  "homepage": "https://github.com/shubham-sns/react-img-placeholder",
   "name": "react-img-placeholder",
   "author": "Shubham Sananse",
   "module": "dist/react-img-placeholder.esm.js",
