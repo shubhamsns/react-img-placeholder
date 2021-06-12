@@ -1,5 +1,4 @@
-import React from 'react';
-import { forwardRef } from 'react';
+import * as React from 'react';
 import { useImage } from './use-image';
 
 function getInt(x) {
@@ -16,15 +15,18 @@ function getInt(x) {
  * React Component for images which shows
  * placeholder while image is loading
  */
-const Image = forwardRef((props, ref) => {
+const Image = React.forwardRef((props, ref) => {
   const {
     placeholderSrc,
     placeholder,
     placeholderColor = 'gray',
     ignorePlaceholder = false,
+    onLoad,
+    onError,
 
     src,
     loading,
+    crossOrigin,
     height,
     width,
     ...rest
@@ -58,29 +60,40 @@ const Image = forwardRef((props, ref) => {
     }
   }
 
-  // conditions for: `src` loading and if `src` fails
+  // conditions for, `src` loading and if `src` fails
   if (!isLoaded) {
     if (placeholderSrc) return <img src={placeholderSrc} {...shared} />;
 
     // react element
-    if (placeholder) {
-      return placeholder;
-    }
+    if (placeholder) return placeholder;
 
     // default placeholder if source and element is not provided
+    // if styles are there in shared it can override
+    const { style = {} } = shared;
     return (
       <div
+        {...shared}
         style={{
-          background: placeholderColor,
           height: `${intHeight}px`,
           width: `${intWidth}px`,
+          background: placeholderColor,
+          ...style,
         }}
       ></div>
     );
   }
 
   // shows up after loading of `src`
-  return <img src={src} {...shared} />;
+  return (
+    <img
+      src={src}
+      loading={loading}
+      crossOrigin={crossOrigin}
+      onLoad={onLoad}
+      onError={onError}
+      {...shared}
+    />
+  );
 });
 
 export { Image };

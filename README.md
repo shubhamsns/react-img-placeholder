@@ -207,3 +207,7 @@ function CustomImage() {
   return <img src="https://via.placeholder.com/600/92c952" />;
 }
 ```
+
+# Acknowedgement
+
+This compnent is insipired by lot of libraries like react-image, next/image, @chakra-ui/image.
