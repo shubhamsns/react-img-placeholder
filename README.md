@@ -210,4 +210,4 @@ function CustomImage() {
 
 # Acknowedgement
 
-This compnent is insipired by lot of libraries like react-image, next/image, @chakra-ui/image.
+This component is inspired by lot of libraries like react-image, next/image, @chakra-ui/image.
