@@ -2,6 +2,20 @@
 
 There are no external dependencies, aside for a version of react and react-dom which support hooks.
 
+# Getting Started
+
+To include the code locally in ES6, CommonJS, or UMD format, install react-image using npm:
+
+```
+npm install react-image --save
+```
+
+## Import
+
+```
+import { Image, useImage } from 'react-img-placeholder'
+```
+
 # Documentation
 
 you can use the `Image` component or create your own custom component with `useImage()` hook.
@@ -16,6 +30,8 @@ you can use the `Image` component or create your own custom component with `useI
 Example usage
 
 ```js
+import { Image } from 'react-img-placeholder';
+
 function LoadImage() {
   return (
     <Image
@@ -195,6 +211,8 @@ object with following properties
 Example usage of hook:
 
 ```js
+import { useImage } from 'react-img-placeholder';
+
 function CustomImage() {
   const { isLoaded, isError, isLoading, isIdle, status } = useImage({
     src: 'https://via.placeholder.com/600/92c952',
