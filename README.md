@@ -7,7 +7,7 @@ There are no external dependencies, aside for a version of react and react-dom w
 To include the code locally in ES6, CommonJS, or UMD format, install react-image using npm:
 
 ```
-npm install react-image --save
+npm i react-img-placeholder
 ```
 
 ## Import
@@ -197,7 +197,7 @@ object with following properties
 
 - `status: String` :<br>
   Will be <br>
-  `idle` if image is not getting fetching. this happens only with prop `ignorePlaceholder: true`<br>
+  `idle` fetching is yet to start
   `loading` if imaged is being loaded<br>
   `failed` if image loading fails<br>
   `loaded` if successfully loads image<br>
