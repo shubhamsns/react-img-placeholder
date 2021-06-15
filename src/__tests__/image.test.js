@@ -7,29 +7,6 @@ const workingSrc = 'https://i.redd.it/r0wkfwxs1d571.png';
 
 afterEach(cleanup);
 
-test('render default div', () => {
-  render(
-    <Image data-testid="color-block" src={fakeSrc} height="200" width="200" />
-  );
-
-  expect(screen.getByTestId('color-block')).toHaveAttribute('height', '200');
-  expect(screen.getByTestId('color-block')).toHaveAttribute('width', '200');
-});
-
-test('custom component load', () => {
-  render(
-    <Image
-      data-testid="color-block"
-      src={fakeSrc}
-      height="200"
-      width="200"
-      placeholder={<h1>Not found</h1>}
-    />
-  );
-
-  expect(screen.getAllByText(/not found/i));
-});
-
 test('render with src', () => {
   render(
     <Image
@@ -53,4 +30,29 @@ test('render with fallback src', async () => {
   waitFor(() =>
     expect(screen.getByRole('img')).toHaveAttribute('src', workingSrc)
   );
+});
+
+test('render default div', () => {
+  render(
+    <Image data-testid="color-block" src={fakeSrc} height="200" width="200" />
+  );
+
+  expect(screen.getByTestId('color-block')).toHaveAttribute(
+    'style',
+    'height: 200px; width: 200px; background: gray;'
+  );
+});
+
+test('custom component load', () => {
+  render(
+    <Image
+      data-testid="color-block"
+      src={fakeSrc}
+      height="200"
+      width="200"
+      placeholder={<h1>Not found</h1>}
+    />
+  );
+
+  expect(screen.getAllByText(/not found/i));
 });
