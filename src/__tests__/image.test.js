@@ -47,7 +47,7 @@ test('render with src', () => {
 
 test('render with fallback src', async () => {
   render(
-    <Image height="200" width="200" src={src} placeholderSrc={workingSrc} />
+    <Image height="200" width="200" src={fakeSrc} placeholderSrc={workingSrc} />
   );
 
   waitFor(() =>
