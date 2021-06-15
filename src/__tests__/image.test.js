@@ -3,7 +3,7 @@ import { render, screen, waitFor, cleanup } from '@testing-library/react';
 import { Image } from '../image/image';
 
 const fakeSrc = 'https://image.xyz/source';
-const workingSrc = 'https://i.redd.it/baodylyz4f571.jpg';
+const workingSrc = 'https://i.redd.it/r0wkfwxs1d571.png';
 
 afterEach(cleanup);
 
